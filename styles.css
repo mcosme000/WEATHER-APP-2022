@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h4 {
+  font-size: 1.6em;
+  font-weight: 400;
+}
+p {
+  font-size: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  width: 99%;
+  background: #fff;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* - - - FORM STYLES - - - - */
+
+form {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  width: 80%;
+  border: none;
+  background: none;
+}
+
+input[type="image"] {
+  width: 30px;
+}
+
+/* - - - MAIN SECTION STYLES - - - - */
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column {
+  padding: 1em 0;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+/* - - - FIRST COLUMN - - - - */
+
+.city-info,
+.temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#city-name {
+  font-weight: 200;
+}
+
+.icon-container {
+  margin: 1em;
+  padding: 1em;
+  width: 15em;
+}
+
+#temp {
+  font-weight: 400;
+}
+.low-high {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* - - - SECOND COLUMN - - - - */
+
+.top {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #000;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.top h4 {
+  padding-bottom: 10px;
+}
+
+#today::after {
+  content: "";
+  height: 3px;
+  width: 10em;
+  background: black;
+  display: block;
+  position: relative;
+  z-index: 6;
+}
+
+/* - - - TODAY INFO- - - */
+table {
+  text-align: left;
+  font-size: 1.6em;
+  width: 100%;
+}
+
+/* - - - NEXT DAYS - - - */
+
+/* - - - MEDIA QUERIES - - - */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  main {
+    padding: 60px 70px;
+    height: 650px;
+    width: 1200px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    width: 50%;
+  }
+
+  section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .column {
+    margin-bottom: 0px;
+  }
+
+  .icon-container {
+    width: 20em;
+  }
+
+  /* only the first column has margin*/
+  .column:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+  }
+}

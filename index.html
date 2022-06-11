@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
+    </style>
+    <title>Weather app</title>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <form action="">
+          <input type="text" />
+          <input type="image" alt="submit" src="./media/icons/search.svg" />
+        </form>
+
+        <section>
+          <!--COLUMN 1 -->
+          <div class="column">
+            <div class="city-info">
+              <h1 id="city-name">Nara</h1>
+              <p id="description">Cloudy and rainy</p>
+              <div class="icon-container">
+                <img
+                  src="./media/icons/rain.svg"
+                  alt="weather icon"
+                  id="icon"
+                />
+              </div>
+            </div>
+            <div class="temperature">
+              <h1 id="temp">20º</h1>
+              <div class="low-high">
+                <p id="high-temp">H 23º</p>
+                <p id="low-temp">L 18º</p>
+              </div>
+            </div>
+          </div>
+
+          <!--COLUMN 1 -->
+          <div class="column">
+            <div class="top">
+              <a href="#" id="today"><h4>Today</h4></a>
+              <a href="#" id="nextdays"><h4>Next days</h4></a>
+            </div>
+            <div class="today-info" id="today-info">
+              <table>
+                <tr>
+                  <td>Humidity</td>
+                  <td>56</td>
+                </tr>
+                <tr>
+                  <td>Wind</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Precitipation</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>Feels like</td>
+                  <td>23º</td>
+                </tr>
+              </table>
+            </div>
+            <div class="next-week hidden" id="next-week">
+              <table>
+                <tr>
+                  <td>Saturday</td>
+                  <td>icon</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td>icon</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Monday</td>
+                  <td>icon</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Tuesday</td>
+                  <td>icon</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Wednesday</td>
+                  <td>icon</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Thursday</td>
+                  <td>icon</td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
