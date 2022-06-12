@@ -43,9 +43,8 @@ img {
 
 main {
   height: 100%;
-  width: 99%;
-  background: #fff;
-  padding: 20px;
+  width: 100%;
+  background: #8382b0;
 }
 
 .hidden {
@@ -82,12 +81,16 @@ section {
 }
 
 .column {
-  padding: 1em 0;
+  padding: 2em;
   text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 3em;
+}
+
+.column:last-of-type {
+  background: #bfbfdc;
 }
 
 /* - - - FIRST COLUMN - - - - */
@@ -145,7 +148,6 @@ section {
 
 /* - - - TODAY INFO- - - */
 table {
-  border: 1px solid grey;
   text-align: left;
   font-size: 1.6em;
   width: 100%;
@@ -158,7 +160,8 @@ tr {
 }
 
 td {
-  text-align: center;
+  text-align: left;
+  margin-left: 2em;
 }
 
 .small-icon img {
