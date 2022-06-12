@@ -145,9 +145,25 @@ section {
 
 /* - - - TODAY INFO- - - */
 table {
+  border: 1px solid grey;
   text-align: left;
   font-size: 1.6em;
   width: 100%;
+  table-layout: fixed;
+}
+
+tr {
+  padding: 0.2em;
+  margin: 0.5em;
+}
+
+td {
+  text-align: center;
+}
+
+.small-icon img {
+  display: block;
+  max-width: 1.5em;
 }
 
 /* - - - NEXT DAYS - - - */
