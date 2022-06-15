@@ -7,6 +7,8 @@ const todayInfo = document.getElementById("today-info");
 const searchButton = document.getElementById("search");
 let input = document.getElementById("input");
 let icon = document.getElementById("icon");
+const mainContainer = document.getElementById("main-container");
+const lowerContainer = document.getElementById("lower-container");
 
 //
 
@@ -53,7 +55,7 @@ const showWeather = (response) => {
   htemp.innerHTML = `H ${newHtemp}º`;
   ltemp.innerHTML = `L ${newLtemp}º`;
 
-  changeIcon(newCondition);
+  //changeIcon(newCondition);
 };
 
 const showForecast = (forecast) => {
@@ -62,62 +64,103 @@ const showForecast = (forecast) => {
 
 // WEATHER CONDITION DESCRIPTIONS
 
-const descriptions = {
-  sunny: ["Sunny"],
-  clear: ["Clear"],
-  cloudy: ["Partly cloudy", "Cloudy", "Overcast"],
-  rainy: [
-    "Patchy rain possible",
-    "Patchy light rain",
-    "Light rain",
-    "Light rain shower",
-    "Moderate rain at times",
-    "Moderate rain",
-    "Light freezing rain",
+const data = [
+  [
+    ["Sunny"],
+    { "main background": "orange", "forecast background": "light orange" },
   ],
-  heavyRain: [
-    "Heavy rain at times",
-    "Heavy rain",
-    "Moderate or heavy rain shower",
-    "Torrential rain shower",
-    "Moderate or heavy freezing rain",
+  [
+    ["Clear"],
+    { "main background": "orange", "forecast background": "light orange" },
   ],
-  mist: ["Mist", "Fog", "Freezing fog"],
-  thunder: [
-    "Patchy light rain with thunder",
-    "Moderate or heavy rain with thunder",
-    "Thundery outbreaks possible",
+  [
+    ["Partly cloudy", "Cloudy", "Overcast"],
+    { "main background": "orange", "forecast background": "light orange" },
   ],
-  foggy: [""],
-  snowy: [
-    "Patchy snow possible",
-    "Patchy light snow",
-    "Light snow",
-    "Light snow showers",
-    "Patchy moderate snow",
-    "Moderate snow",
-  ],
-  heavySnow: [
-    "Patchy heavy snow",
-    "Heavy snow",
-    "Moderate or heavy snow showers",
-  ],
-  snowThunder: [
-    "Patchy light snow with thunder",
-    "Moderate or heavy snow with thunder",
-  ],
-};
 
-//ITERATE THROUGH ARRAY OBJECT:
+  [
+    [
+      "Patchy rain possible",
+      "Patchy light rain",
+      "Light rain",
+      "Light rain shower",
+      "Moderate rain at times",
+      "Moderate rain",
+      "Light freezing rain",
+    ],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    [
+      "Heavy rain at times",
+      "Heavy rain",
+      "Moderate or heavy rain shower",
+      "Torrential rain shower",
+      "Moderate or heavy freezing rain",
+    ],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    ["Mist", "Fog", "Freezing fog"],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    [
+      "Patchy light rain with thunder",
+      "Moderate or heavy rain with thunder",
+      "Thundery outbreaks possible",
+    ],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    [""],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    [
+      "Patchy snow possible",
+      "Patchy light snow",
+      "Light snow",
+      "Light snow showers",
+      "Patchy moderate snow",
+      "Moderate snow",
+    ],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    ["Patchy heavy snow", "Heavy snow", "Moderate or heavy snow showers"],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+  [
+    ["Patchy light snow with thunder", "Moderate or heavy snow with thunder"],
+    { "main background": "orange", "forecast background": "light orange" },
+  ],
+];
 
-const changeIcon = (newCondition) => {
-  for (const key in descriptions) {
-    for (let i = 0; i < Object.keys(descriptions).length; i++) {
-      if (newCondition === descriptions[key][i]) {
-        icon.src = `./media/icons/${key}.svg`;
-        console.log(key);
-        console.log(icon);
-      }
-    }
+//DE ESTA MANERA FUNCIONAAAAAAAAAAA
+//Puedo hacer loop a través del array y buscar coincidencias en las descripciones
+data.forEach((item) => {
+  for (let i = 0; i < item[0].length; i++) {
+    console.log(item[0][i]);
   }
-};
+});
+
+// const changeIcon = (newCondition) => {
+//   for (const key in descriptions) {
+//     //console.log(descriptions[key].description);
+//     for (let i = 0; i < Object.keys(descriptions).length; i++) {
+//       console.log(i);
+//       //console.log(Object.keys(descriptions).description.length);
+
+//       //console.log(descriptions[key].description);
+//     }
+//     //if (newCondition === descriptions[key][i]) {
+//     //icon.src = `./media/icons/${key}.svg`;
+//     //console.log(key);
+//     //console.log(icon);
+//     //}
+//     //}
+//   }
+// };
+
+// changeIcon();
