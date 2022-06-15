@@ -1,0 +1,89 @@
+{
+  "sunny": {
+    "description": ["Sunny"],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "clear": {
+    "description": ["Clear"],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "cloudy": {
+    "description": ["Partly cloudy", "Cloudy", "Overcast"],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "rainy": {
+    "description": [
+      "Patchy rain possible",
+      "Patchy light rain",
+      "Light rain",
+      "Light rain shower",
+      "Moderate rain at times",
+      "Moderate rain",
+      "Light freezing rain"
+    ],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "heavyRain": {
+    "description": [
+      "Heavy rain at times",
+      "Heavy rain",
+      "Moderate or heavy rain shower",
+      "Torrential rain shower",
+      "Moderate or heavy freezing rain"
+    ],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "mist": {
+    "description": ["Mist", "Fog", "Freezing fog"],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "thunder": {
+    "description": [
+      "Patchy light rain with thunder",
+      "Moderate or heavy rain with thunder",
+      "Thundery outbreaks possible"
+    ],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "foggy": {
+    "description": [""],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "snowy": {
+    "description": [
+      "Patchy snow possible",
+      "Patchy light snow",
+      "Light snow",
+      "Light snow showers",
+      "Patchy moderate snow",
+      "Moderate snow"
+    ],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "heavySnow": {
+    "description": [
+      "Patchy heavy snow",
+      "Heavy snow",
+      "Moderate or heavy snow showers"
+    ],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  },
+  "snowThunder": {
+    "description": [
+      "Patchy light snow with thunder",
+      "Moderate or heavy snow with thunder"
+    ],
+    "main background": "#8382b0",
+    "forecast background": "light orange"
+  }
+}
