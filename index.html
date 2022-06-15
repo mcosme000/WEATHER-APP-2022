@@ -13,26 +13,28 @@
   </head>
   <body>
     <div class="container">
-      <main>
-        <form action="">
-          <input type="text" id="input" />
-          <input
-            type="image"
-            alt="submit"
-            src="./media/icons/search.svg"
-            id="search"
-          />
-        </form>
+      <div class="main-container">
+        <!-- *** COLUMN 1*** -->
+        <div class="column">
+          <!--FORM SECTION-->
+          <form action="">
+            <input type="text" id="input" />
+            <input
+              type="image"
+              alt="submit"
+              src="./media/icons/search.svg"
+              id="search"
+            />
+          </form>
 
-        <section>
-          <!--COLUMN 1 -->
-          <div class="column">
+          <!--MAIN SECTION-->
+          <main>
             <div class="city-info">
               <h1 id="city-name">Nara</h1>
               <p id="condition">Cloudy and rainy</p>
               <div class="icon-container">
                 <img
-                  src="./media/icons/rain.svg"
+                  src="./media/icons/sunny.svg"
                   alt="weather icon"
                   id="icon"
                 />
@@ -45,85 +47,100 @@
                 <p id="low-temp">L 18º</p>
               </div>
             </div>
-          </div>
-
-          <!--COLUMN 1 -->
-          <div class="column">
-            <div class="top">
-              <a href="#" id="today"><h4>Today</h4></a>
-              <a href="#" id="nextdays"><h4>Next days</h4></a>
+          </main>
+        </div>
+        <!-- *** COLUMN 1*** -->
+        <div class="column">
+          <!-- FORECAST -->
+          <div class="forecast" id="forecast">
+            <div class="forecast-day">
+              <p>SAT</p>
+              <img
+                src="./media/icons/sunny.svg"
+                alt="forecast weather icon"
+                class="small-icon"
+              />
+              <p>18º</p>
             </div>
-            <div class="today-info" id="today-info">
-              <table>
-                <tr>
-                  <td>Humidity</td>
-                  <td>56</td>
-                </tr>
-                <tr>
-                  <td>Wind</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>Precitipation</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>Feels like</td>
-                  <td>23º</td>
-                </tr>
-              </table>
+            <div class="forecast-day">
+              <p>SUN</p>
+              <img
+                src="./media/icons/sunny.svg"
+                alt="forecast weather icon"
+                class="small-icon"
+              />
+              <p>18º</p>
             </div>
-            <div class="next-week hidden" id="next-week">
-              <table>
-                <tr>
-                  <th>Saturday</th>
-                  <td class="small-icon">
-                    <img src="./media/icons/sunny.svg" alt="" />
-                  </td>
-                  <td>18º</td>
-                </tr>
-                <tr>
-                  <th>Sunday</th>
-                  <td>
-                    <div class="small-icon">
-                      <img src="./media/icons/sunny.svg" alt="" />
-                    </div>
-                  </td>
-                  <td>18º</td>
-                </tr>
-                <tr>
-                  <td>Monday</td>
-                  <td class="small-icon">
-                    <img src="./media/icons/sunny.svg" alt="" />
-                  </td>
-                  <td>18º</td>
-                </tr>
-                <tr>
-                  <td>Tuesday</td>
-                  <td class="small-icon">
-                    <img src="./media/icons/sunny.svg" alt="" />
-                  </td>
-                  <td>18º</td>
-                </tr>
-                <tr>
-                  <td>Wednesday</td>
-                  <td class="small-icon">
-                    <img src="./media/icons/sunny.svg" alt="" />
-                  </td>
-                  <td>18º</td>
-                </tr>
-                <tr>
-                  <td>Thursday</td>
-                  <td class="small-icon">
-                    <img src="./media/icons/sunny.svg" alt="" />
-                  </td>
-                  <td>18º</td>
-                </tr>
-              </table>
+            <div class="forecast-day">
+              <p>MON</p>
+              <img
+                src="./media/icons/sunny.svg"
+                alt="forecast weather icon"
+                class="small-icon"
+              />
+              <p>18º</p>
+            </div>
+            <div class="forecast-day">
+              <p>TUE</p>
+              <img
+                src="./media/icons/sunny.svg"
+                alt="forecast weather icon"
+                class="small-icon"
+              />
+              <p>18º</p>
+            </div>
+            <div class="forecast-day">
+              <p>WED</p>
+              <img
+                src="./media/icons/sunny.svg"
+                alt="forecast weather icon"
+                class="small-icon"
+              />
+              <p>18º</p>
             </div>
           </div>
-        </section>
-      </main>
+          <!-- OTHER INFORMATION -->
+          <div class="other-information">
+            <div class="row">
+              <div class="row-content">
+                <p>Humidity</p>
+                <p id="humidity">56%</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row-content">
+                <p>Wind</p>
+                <p id="wind">20km/h</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row-content">
+                <p>Precitipation</p>
+                <p id="precipitation">0 mm</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row-content">
+                <p>Feels like</p>
+                <p id="feelslike">23º</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row-content">
+                <p>Visibility</p>
+                <p id="visibility">13km</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row-content">
+                <p>UV</p>
+                <p id="uv">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- se termina column-->
+      </div>
     </div>
     <script src="app.js"></script>
   </body>

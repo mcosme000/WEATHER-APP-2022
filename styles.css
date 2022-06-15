@@ -35,26 +35,31 @@ img {
 }
 
 .container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main {
-  height: 100%;
+.main-container {
   width: 100%;
+  padding: 2em;
+  height: 100%;
   background: #8382b0;
 }
 
-.hidden {
-  display: none;
+.column {
+  padding: 2em;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
 }
 
 /* - - - FORM STYLES - - - - */
 
 form {
-  padding: 10px;
+  padding: 1em;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -73,27 +78,6 @@ input[type="image"] {
 }
 
 /* - - - MAIN SECTION STYLES - - - - */
-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.column {
-  padding: 2em;
-  text-align: center;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3em;
-}
-
-.column:last-of-type {
-  background: #bfbfdc;
-}
-
-/* - - - FIRST COLUMN - - - - */
 
 .city-info,
 .temperature {
@@ -109,7 +93,7 @@ section {
 .icon-container {
   margin: 1em;
   padding: 1em;
-  width: 15em;
+  width: 18em;
 }
 
 #temp {
@@ -122,72 +106,62 @@ section {
   justify-content: space-around;
 }
 
-/* - - - SECOND COLUMN - - - - */
+/* - - - FORECAST - - - - */
 
-.top {
+.forecast {
   display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid #000;
+  justify-content: space-between;
+}
+
+.forecast-day {
+  padding: 1em;
+}
+
+.forecast-day * {
   margin-bottom: 2em;
-  position: relative;
 }
 
-.top h4 {
-  padding-bottom: 10px;
+.small-icon {
+  max-width: 2.5em;
 }
 
-#today::after {
-  content: "";
-  height: 3px;
-  width: 10em;
-  background: black;
-  display: block;
-  position: relative;
-  z-index: 6;
-}
+/* - - - OTHER INFORMATION - - - - */
 
-/* - - - TODAY INFO- - - */
-table {
-  text-align: left;
-  font-size: 1.6em;
+.other-information {
   width: 100%;
-  table-layout: fixed;
+}
+.information-container {
+  width: 80%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 0.1em solid rgb(49, 49, 49);
 }
 
-tr {
-  padding: 0.2em;
-  margin: 0.5em;
+.row-content {
+  width: 80%;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
 }
-
-td {
-  text-align: left;
-  margin-left: 2em;
-}
-
-.small-icon img {
-  display: block;
-  max-width: 1.5em;
-}
-
-/* - - - NEXT DAYS - - - */
 
 /* - - - MEDIA QUERIES - - - */
 
 @media (min-width: 768px) {
   .container {
+    height: 100vh;
     padding: 20px;
   }
-  main {
+  .main-container {
     padding: 60px 70px;
     height: 650px;
     width: 1200px;
     border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  form {
-    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
   }
 
   section {
@@ -206,7 +180,6 @@ td {
   /* only the first column has margin*/
   .column:first-of-type {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-right: 50px;
