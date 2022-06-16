@@ -10,8 +10,6 @@ let icon = document.getElementById("icon");
 const mainContainer = document.getElementById("main-container");
 const lowerContainer = document.getElementById("lower-container");
 
-//
-
 // WEATHER VARIABLES
 
 const city = document.getElementById("city-name");
@@ -56,6 +54,7 @@ const showWeather = (response) => {
   ltemp.innerHTML = `L ${newLtemp}º`;
 
   //changeIcon(newCondition);
+  changeIcon(newCondition);
 };
 
 const showForecast = (forecast) => {
@@ -67,15 +66,39 @@ const showForecast = (forecast) => {
 const data = [
   [
     ["Sunny"],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "sunny",
+      "main background": "#A3C2FF",
+      "forecast background": "#A3C2FF",
+      "font color": "#fff",
+    },
   ],
   [
     ["Clear"],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "clear",
+      "main background": "#32509D",
+      "forecast background": "#32509D",
+      "font color": "#fff",
+    },
   ],
   [
-    ["Partly cloudy", "Cloudy", "Overcast"],
-    { "main background": "orange", "forecast background": "light orange" },
+    ["Partly cloudy"],
+    {
+      icon: "partlyCloudy",
+      "main background": "#C4C4C4",
+      "forecast background": "#C4C4C4",
+      "font color": "#000",
+    },
+  ],
+  [
+    ["Cloudy", "Overcast"],
+    {
+      icon: "cloudy",
+      "main background": "#C4C4C4",
+      "forecast background": "#C4C4C4",
+      "font color": "#000",
+    },
   ],
 
   [
@@ -88,7 +111,12 @@ const data = [
       "Moderate rain",
       "Light freezing rain",
     ],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "rainy",
+      "main background": "#92A1BD",
+      "forecast background": "#92A1BD",
+      "font color": "#fff",
+    },
   ],
   [
     [
@@ -98,11 +126,21 @@ const data = [
       "Torrential rain shower",
       "Moderate or heavy freezing rain",
     ],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "heavyRain",
+      "main background": "#92A1BD",
+      "forecast background": "#92A1BD",
+      "font color": "#fff",
+    },
   ],
   [
     ["Mist", "Fog", "Freezing fog"],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "mist",
+      "main background": "#D9D9D9",
+      "forecast background": "#D9D9D9",
+      "font color": "#000",
+    },
   ],
   [
     [
@@ -110,11 +148,12 @@ const data = [
       "Moderate or heavy rain with thunder",
       "Thundery outbreaks possible",
     ],
-    { "main background": "orange", "forecast background": "light orange" },
-  ],
-  [
-    [""],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "thunder",
+      "main background": "#8382B0",
+      "forecast background": "#8382B0",
+      "font color": "#fff",
+    },
   ],
   [
     [
@@ -125,26 +164,49 @@ const data = [
       "Patchy moderate snow",
       "Moderate snow",
     ],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "snow",
+      "main background": "orange",
+      "forecast background": "light orange",
+    },
   ],
   [
     ["Patchy heavy snow", "Heavy snow", "Moderate or heavy snow showers"],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "heavySnow",
+      "main background": "orange",
+      "forecast background": "light orange",
+    },
   ],
   [
     ["Patchy light snow with thunder", "Moderate or heavy snow with thunder"],
-    { "main background": "orange", "forecast background": "light orange" },
+    {
+      icon: "snowThunder",
+      "main background": "orange",
+      "forecast background": "light orange",
+    },
   ],
 ];
 
+//console.log(data[0][1]["main background"]);
+
 //DE ESTA MANERA FUNCIONAAAAAAAAAAA
 //Puedo hacer loop a través del array y buscar coincidencias en las descripciones
-data.forEach((item) => {
-  for (let i = 0; i < item[0].length; i++) {
-    console.log(item[0][i]);
-  }
-});
 
+const changeIcon = (newCondition) => {
+  data.forEach((item) => {
+    for (let i = 0; i < item[0].length; i++) {
+      //console.log(item[0][i]); //con esto saco todas las descripciones!
+      if (newCondition === item[0][i]) {
+        console.log(newCondition);
+        console.log(item[1]["icon"]);
+        icon.src = `./media/icons/${item[1]["icon"]}.svg`;
+        mainContainer.style.backgroundColor = item[1]["main background"];
+        document.body.style.color = item[1]["font color"];
+      }
+    }
+  });
+};
 // const changeIcon = (newCondition) => {
 //   for (const key in descriptions) {
 //     //console.log(descriptions[key].description);

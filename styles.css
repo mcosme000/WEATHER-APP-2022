@@ -42,7 +42,6 @@ img {
 
 .main-container {
   width: 100%;
-  padding: 2em;
   height: 100%;
   background: #8382b0;
 }
@@ -53,6 +52,9 @@ img {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.column:first-of-type {
   margin-bottom: 3em;
 }
 
@@ -111,6 +113,8 @@ input[type="image"] {
 .forecast {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2em;
+  padding: 2em;
 }
 
 .forecast-day {
@@ -138,6 +142,10 @@ input[type="image"] {
   flex-direction: row;
   justify-content: center;
   border-bottom: 0.1em solid rgb(49, 49, 49);
+}
+
+.row:last-of-type {
+  border-bottom: none;
 }
 
 .row-content {
