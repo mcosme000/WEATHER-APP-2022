@@ -27,8 +27,8 @@ searchButton.addEventListener("click", (e) => {
 
   // API THINGS
   const apiId = "a3bab593ca134ad392c91730221206";
-  let apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiId}&q=${input.value}&aqi=no`;
-  let forecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiId}&q=${input.value}&days=20&aqi=no`;
+  let apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiId}&q=${input.value}&aqi=no`;
+  let forecast = `https://api.weatherapi.com/v1/forecast.json?key=${apiId}&q=${input.value}&days=20&aqi=no`;
   axios.get(forecast).then(showWeather);
   //axios.get(forecast).then(showForecast);
 
