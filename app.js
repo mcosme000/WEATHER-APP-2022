@@ -28,7 +28,7 @@ searchButton.addEventListener("click", (e) => {
   // API THINGS
   const apiId = "a3bab593ca134ad392c91730221206";
   let apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiId}&q=${input.value}&aqi=no`;
-  let forecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiId}&q=${input.value}&aqi=no`;
+  let forecast = `http://api.weatherapi.com/v1/forecast.json?key=${apiId}&q=${input.value}&days=20&aqi=no`;
   axios.get(forecast).then(showWeather);
   //axios.get(forecast).then(showForecast);
 
@@ -55,14 +55,17 @@ const showWeather = (response) => {
 
   //changeIcon(newCondition);
   changeIcon(newCondition);
+
+  let forecast = data.forecast.forecastday;
+  showForecast(forecast);
 };
 
 const showForecast = (forecast) => {
   console.log(forecast);
+  console.log(forecast[0].date_epoch);
 };
 
-// WEATHER CONDITION DESCRIPTIONS
-
+// WEATHER CONDITION DESCRIPTIONS & background color styles
 const data = [
   [
     ["Sunny"],
@@ -188,8 +191,6 @@ const data = [
   ],
 ];
 
-//console.log(data[0][1]["main background"]);
-
 //DE ESTA MANERA FUNCIONAAAAAAAAAAA
 //Puedo hacer loop a través del array y buscar coincidencias en las descripciones
 
@@ -198,8 +199,6 @@ const changeIcon = (newCondition) => {
     for (let i = 0; i < item[0].length; i++) {
       //console.log(item[0][i]); //con esto saco todas las descripciones!
       if (newCondition === item[0][i]) {
-        console.log(newCondition);
-        console.log(item[1]["icon"]);
         icon.src = `./media/icons/${item[1]["icon"]}.svg`;
         mainContainer.style.backgroundColor = item[1]["main background"];
         document.body.style.color = item[1]["font color"];
@@ -207,22 +206,3 @@ const changeIcon = (newCondition) => {
     }
   });
 };
-// const changeIcon = (newCondition) => {
-//   for (const key in descriptions) {
-//     //console.log(descriptions[key].description);
-//     for (let i = 0; i < Object.keys(descriptions).length; i++) {
-//       console.log(i);
-//       //console.log(Object.keys(descriptions).description.length);
-
-//       //console.log(descriptions[key].description);
-//     }
-//     //if (newCondition === descriptions[key][i]) {
-//     //icon.src = `./media/icons/${key}.svg`;
-//     //console.log(key);
-//     //console.log(icon);
-//     //}
-//     //}
-//   }
-// };
-
-// changeIcon();
